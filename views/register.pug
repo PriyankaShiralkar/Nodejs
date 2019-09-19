@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    
+    .container.centered
+
+        h4(style="marrgin-bottom:20px") Welcome to e-Shoppie
+        form(action="/register" method="POST")
+            input.form-control(name="email" placeholder="Email")
+            input.form-control(type="password" name="password" placeholder='Password')
+            input.form-control(name="firstName" placeholder="First Name")
+            input.form-control(name="lastName" placeholder="Last Name")
+            button.btn-btn-primary(type="submit") Register

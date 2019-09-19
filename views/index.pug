@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  
+  div.container
+    h4 Welcome to our shopping Cart app
+    form(action="/login" method="POST")
+      input.form-control(name="username" placeholder="Email")
+      input.form-control(type="password" name="password" placeholder='Password')
+      button.btn-btn-primary(type="submit") Login
+
+    a(href="/register") Register

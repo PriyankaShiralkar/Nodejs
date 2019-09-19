@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  nav.navbar.navbar-expand.navbar-light.bg-light
+    a.navbar-brand(href="#") e-Shoppie
+    button.navbar-toggler(
+      type="button" 
+      data-toggle="collapse" 
+      data-target="#navbarSupportedContent" 
+      aria-controls="navbarSupportedContent" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation"
+    )
+      span.navbar-toggler-icon
+    ul.navbar-nav.flex-row.ml-md-auto.d-none.d-md-flex
+      li.navbar-item
+        a.btn.btn-secondary(href="/logout") Logout
+
+
+  div.container
+    h4 Cart item:#{numCartItems}
+    h4 Cart amount: #{cartPrice}
+    hr
+    each item in items
+        form(action="/shop/addToCart" method="POST")
+            input(type="hidden", name="itemId" value=item._id)
+            
+
+            p #{item.name} - #{item.price} 
+                button.btn.btn-secondary(type="submit") &nbsp;Add to Cart
